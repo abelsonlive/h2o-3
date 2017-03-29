@@ -156,7 +156,7 @@ class ActualPCATests {
 
 						parms._pca_method = pcaMethod;
 						PCA pcaParmsW = new PCA(parms);
-						pcaParmsW.setWideDataset(true);  // force to treat dataset as wide even though it is not.
+	//					pcaParmsW.setWideDataset(true);  // force to treat dataset as wide even though it is not.
 						modelW = pcaParmsW.trainModel().get();
 						scoreW = modelW.score(train);
 						Scope.track(scoreW);

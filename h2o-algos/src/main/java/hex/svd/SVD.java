@@ -302,7 +302,7 @@ public class SVD extends ModelBuilder<SVDModel,SVDModel.SVDParameters,SVDModel.S
       try {
         // 1) Initialize Y = AG where G ~ N(0,1) and compute Y = QR factorization
         _job.update(1, "Initializing random subspace of training data Y");
-        double[][] gt = ArrayUtils.gaussianArray(_parms._nv, _ncolExp, _parms._seed);
+        double[][] gt = ArrayUtils.gaussianArray(_parms._nv, _ncolExp, _parms._seed); // allocate memory
         RandSubInit rtsk = new RandSubInit(_job._key, dinfo, gt);
         rtsk.doAll(_parms._nv, Vec.T_NUM, dinfo._adaptedFrame);
         ybig = rtsk.outputFrame(Key.<Frame>make(), null, null);
